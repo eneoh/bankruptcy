@@ -27,7 +27,7 @@ def index():
         WTCA = request.form.get("WTCA")
         print(NPTA, TLTA, WTCA)
         model=load_model("bankruptcy")
-        pred=model.predict([[float(NPTA),float(TLTA),float(WCTA)]])
+        pred=model.predict([[float(NPTA),float(TLTA),float(WTCA)]])
         s = "The predicted bankruptcy score is: " + str(pred)
         return(render_template("index.html", result=s))
     else:
